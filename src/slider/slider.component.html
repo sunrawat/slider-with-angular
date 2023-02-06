@@ -1,0 +1,21 @@
+<div class="carousel">
+  <a (click)="previous()" *ngIf="currentIndex > 0" href="#" class="next-prev"
+    >&laquo; Prev</a
+  >
+  <div
+    class="card"
+    *ngFor="let c of selectedList"
+    [ngStyle]="{ border: selectedIndex == c.title ? '1px solid red' : 'none' }"
+  >
+    <div class="content">
+      {{ c.title }}
+    </div>
+  </div>
+  <a
+    href="#"
+    class="next-prev"
+    (click)="next()"
+    *ngIf="currentIndex < data.length - 3"
+    >Next &raquo;</a
+  >
+</div>
